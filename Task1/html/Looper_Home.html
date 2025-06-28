@@ -3,105 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noticia+Text:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task1\styles\Style.css">
     <title>Task1WebAnt</title>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h3 class="Logo">Lopper</h3>
-            <nav class="header__navbar">
-                <a class="navbar__item" src="">Home</a>
-                <a class="navbar__item" src="">Services</a>
-                <a class="navbar__item" src="">Work</a>
-                <a class="navbar__item" src="">About</a>
-                <img  class="navbar__icon">
-                <a class="navbar__item">(01) 666 - 693 - 456</a>
-                <menu class="navbar__menu">
-                    <div class=""></div>
-                </menu>
-            </nav>
-            <scroll class="header__scroll">
-                <h4 class="text-scroll">SCROLL TO SEE MORE</h4>
-                <img class="icon-scroll">
-            </scroll>
-            <headline class="header__headline">
-                <title class="headline__title">WHAT WE DO?</title>
-                <h1 class="headline__text">We grow <span class="header__text header__text_pink">great business</span></h1>
-            </headline>
-            <subheader class="header__subheader">
-                <text class="subheader__text">Velit laoreet id donec ultrices. Ut lectus arcu bibendum varius.</text>
-                <div class="subheader__icon">
-                    <div class="subheader__icon_long"></div>
-                    <div class="subheader__icon_long"></div>
-                    <div class="subheader__icon_short"></div>
-                </div>
-            </subheader>
+<div class="wrapper">
+    <header >
+        <nav>
+            <div class="navbar__container">
+                <h3 class="navbar__logo navbar__logo_white">Lopper</h3>
+                    <ul class="navbar__list">
+                        <li class="home-navbar__item"><a class="navbar__link navbar__link_white navbar__link_active" src="">Home</a></li>
+                        <li class="services-navbar__item"><a class="navbar__link navbar__link_white" src="">Services</a></li>
+                        <li class="work-navbar__item"><a class="navbar__link navbar__link_white" src="">Work</a></li>
+                        <li class="about-navbar__item"><a class="navbar__link navbar__link_white" src="">About</a></li>
+                    </ul>
+                    <div class="navbar__phone">
+                        <img  class="navbar__icon" src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task1\images\icons\header\phone.png">
+                        <a class="navbar__link navbar__link_white">(01) 666 - 693 - 456</a>
+                    </div>
+                    <button class="navbar__button">
+                        <div class="navbar__button_long"></div>
+                        <div class="navbar__button_long"></div>
+                        <div class="navbar__button_short"></div>
+                    </button>
+            </div>
+        </nav>
+        <div class="header__container">
+            <div class="header__headline headline">
+                <p class="headline__title headline__title_white">what we do?</p>
+                <h2 class="headline__text headline__text_white">We grow</h2>
+                <h2 class="headline__text headline__text_white"><span class="headline__text header__text_pink">great business</span></h2>
+            </div>
+            <div class="header__scroll">
+                <h4 class="header__scroll-text header__scroll-text_white">scroll to see more</h4>
+                <button class="header__scroll-button"><img class="header__scroll-icon" src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task1\images\icons\header\Arrow2.png"></button>
+            </div>
+            <div class="header__subheader">
+                <p class="subheader__text subheader__text_white">Velit laoreet id donec ultrices. Ut lectus arcu bibendum varius.</p>
+                <div class="button-subheader"><img class="icon-subheader" src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task1\images\icons\header\Arrow2.png"></div>
+            </div>
         </div>
     </header>
-    <intro>
-        <div class="container">
+<main>
+    <section class="intro">
+        <div class="intro__container">
             <div class="intro__texts">
-                <title class="intro__text_small">WHAT WE CAN DO?</title>
-                <h3 class="intro__text_big">OUR SERVICES</h3>
+                <h3 class="intro__text_small intro__text_small_pink">what we can do?</h3>
+                <h2 class="intro__text_big">Our services</h2>
             </div>
-            <div class="intro_items">
+            <div class="intro__items">
                 <div class="item-intro">
-                    <img class="item-intro__icon" src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task1\images\icons\intro\Vector.png">
+                    <div class="item-intro__background"><img class="item-intro__icon" src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task1\images\icons\intro\Vector.png"></div>
                     <h6 class="item-intro__title">Webdesign</h6>
-                    <text class="item-intro__text">Tincidunt lobortis feugiat vivamus at augue eget. Risus feugiat in ante metus dictum. Amet aliquam id diam maecenas.</text>
+                    <p class="item-intro__text">Tincidunt lobortis feugiat vivamus at augue eget. Risus feugiat in ante metus dictum. Amet aliquam id diam maecenas.</p>
                 </div>
                 <div class="item-intro">
-                    <img class="item-intro__icon" src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task1\images\icons\intro\Vector.png">
+                    <div class="item-intro__background"><img class="item-intro__icon" src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task1\images\icons\intro\Vector.png"></div>
                     <h6 class="item-intro__title">Webdesign</h6>
-                    <text class="item-intro__text">Tincidunt lobortis feugiat vivamus at augue eget. Risus feugiat in ante metus dictum. Amet aliquam id diam maecenas.</text>
+                    <p class="item-intro__text">Tincidunt lobortis feugiat vivamus at augue eget. Risus feugiat in ante metus dictum. Amet aliquam id diam maecenas.</p>
                 </div>
                 <div class="item-intro">
-                    <img class="item-intro__icon" src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task1\images\icons\intro\Vector.png">
+                    <div class="item-intro__background"><img class="item-intro__icon" src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task1\images\icons\intro\Vector.png"></div>
                     <h6 class="item-intro__title">Webdesign</h6>
-                    <text class="item-intro__text">Tincidunt lobortis feugiat vivamus at augue eget. Risus feugiat in ante metus dictum. Amet aliquam id diam maecenas.</text>
+                    <p class="item-intro__text">Tincidunt lobortis feugiat vivamus at augue eget. Risus feugiat in ante metus dictum. Amet aliquam id diam maecenas.</p>
                 </div>
                 <div class="item-intro">
-                    <img class="item-intro__icon" src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task1\images\icons\intro\Vector.png">
+                    <div class="item-intro__background"><img class="item-intro__icon" src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task1\images\icons\intro\Vector.png"></div>
                     <h6 class="item-intro__title">Webdesign</h6>
-                    <text class="item-intro__text">Tincidunt lobortis feugiat vivamus at augue eget. Risus feugiat in ante metus dictum. Amet aliquam id diam maecenas.</text>
+                    <p class="item-intro__text">Tincidunt lobortis feugiat vivamus at augue eget. Risus feugiat in ante metus dictum. Amet aliquam id diam maecenas.</p>
                 </div>
                 <div class="item-intro">
-                    <img class="item-intro__icon" src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task1\images\icons\intro\Vector.png">
+                    <div class="item-intro__background"><img class="item-intro__icon" src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task1\images\icons\intro\Vector.png"></div>                    
                     <h6 class="item-intro__title">Webdesign</h6>
-                    <text class="item-intro__text">Tincidunt lobortis feugiat vivamus at augue eget. Risus feugiat in ante metus dictum. Amet aliquam id diam maecenas.</text>
+                    <p class="item-intro__text">Tincidunt lobortis feugiat vivamus at augue eget. Risus feugiat in ante metus dictum. Amet aliquam id diam maecenas.</p>
                 </div>
                 <div class="item-intro">
-                    <img class="item-intro__icon" src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task1\images\icons\intro\Vector.png">
+                    <div class="item-intro__background"><img class="item-intro__icon" src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task1\images\icons\intro\Vector.png"></div>
                     <h6 class="item-intro__title">Webdesign</h6>
-                    <text class="item-intro__text">Tincidunt lobortis feugiat vivamus at augue eget. Risus feugiat in ante metus dictum. Amet aliquam id diam maecenas.</text>
+                    <p class="item-intro__text">Tincidunt lobortis feugiat vivamus at augue eget. Risus feugiat in ante metus dictum. Amet aliquam id diam maecenas.</p>
                 </div>
             </div>
             <div class="intro__quote">
-                <quote class="item-intro__comment">“Apparently we had reached a great height in the atmosphere, for the sky was a dead black, and the stars had ceased to twinkle.”</quote>
-                <text class="item-intro__author"><span class="item-intro__author_pink">Andrew Slomka</span> - Some Company</text>
+                <div class="intro__texts">
+                    <h3 class="item-intro__comment item-intro__comment_white">“Apparently we had reached a great height in the atmosphere, for the sky was a dead black, and the stars had ceased to twinkle.”</h3>
+                    <p class="item-intro__author"><span class="item-intro__author item-intro__author_pink">Andrew Slomka</span> - Some Company</p>
+                </div>
                 <img class="item-intro__photo" src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task1\images\icons\intro\Photo.png">
             </div>
         </div>
-    </intro>
-    <features>
-        <div class="container">
+    </section>
+    <section class="features">
+        <div class="features__container">
             <div class="features__row">
-                <div class="features__column">
+                <div class="features__textcolumn">
                     <div class="intro__texts">
-                        <title class="intro__text_small">WHAT WE CAN DO?</title>
-                        <h3 class="intro__text_big">OUR SERVICES</h3>
-                        <text class="intro__text_normal_black">Eget nunc scelerisque viverra mauris in aliquam. Dignissim sodales ut eu sem integer vitae. Libero nunc consequat interdum varius.</text>
+                        <h3 class="intro__text_small_pink">Benefits</h3>
+                        <h2 class="intro__text_big">Shaping the future</h2>
+                        <p class="intro__text_normal">Eget nunc scelerisque viverra mauris in aliquam. Dignissim sodales ut eu sem integer vitae. Libero nunc consequat interdum varius.</p>
                     </div>
                     <ul class="features__texts">
                         <li class="list-features">Magna sit amet purus gravida. Sit amet porttitor eget dolor morbi non.</li>
                         <li class="list-features">Lectus vestibulum mattis ullamcorper velit sed ullamcorper.</li>
                         <li class="list-features">Diam phasellus vestibulum lorem sed risus ultricies tristique nulla. Dui faucibus in ornare quam viverra.</li>
                         <li class="list-features">Posuere ac ut consequat semper viverra.</li>
-                        <button class="button-features"></button>
                     </ul>
+                    <button class="button-features">learn more</button>
                 </div>
-                <div class="features__column">
+                <div class="features__photocolumn">
                     <div class="features__photos">
                         <img class="photo1-features" src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task1\images\icons\features\Photo2.png">
                         <img class="photo2-features" src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task1\images\icons\features\Photo1.png">
@@ -109,94 +124,151 @@
                 </div>
             </div>
         </div>
-    </features>
-    <clients>
-        <div class="container">
+    </section>
+    <section class="clients">
+        <div class="clients__container">
             <div class="intro__texts">
-                <title class="intro__text_small">What we do</title>
-                <h3 class="intro__text_big">What we  do more than you can imangine, belive us.</h3>
+                <h3 class="intro__text_small intro__text_small_pink">What we do</h3>
+                <h2 class="intro__text_big">What we  do more than you can imangine, belive us.</h2>
             </div>
             <div class="clients__row">
-                <div class="clients__column">
-                    <h4 class="clients__text_big">We build great business</h4>
+                <div class="clients__textcolumn">
+                    <h4 class="clients__text_big clients__text_big_pink">We build great business</h4>
                     <ul class="clients__texts"> 
-                        <li class="list-clients">Nisl condimentum id venenatis a. Nec tincidunt praesent semper feugiat nibh sed pulvinar proin gravida. Sollicitudin tempor id eu nisl nunc.</li>
-                        <li class="list-clients">Adipiscing diam donec adipiscing tristique risus nec feugiat in fermentum. Pretium vulputate sapien nec sagittis aliquam malesuada bibendum arcu vitae.</li>
-                        <li class="list-clients">Massa massa ultricies mi quis hendrerit dolor magna. Egestas dui id ornare arcu odio..</li>
+                        <li class="list-clients"><a class="text-clients text-clients_white">Nisl condimentum id venenatis a. Nec tincidunt praesent semper feugiat nibh sed pulvinar proin gravida. Sollicitudin tempor id eu nisl nunc.</a></li>
+                        <li class="list-clients"><a class="text-clients text-clients_white">Adipiscing diam donec adipiscing tristique risus nec feugiat in fermentum. Pretium vulputate sapien nec sagittis aliquam malesuada bibendum arcu vitae.</a></li>
+                        <li class="list-clients"><a class="text-clients text-clients_white">Massa massa ultricies mi quis hendrerit dolor magna. Egestas dui id ornare arcu odio..</a></li>
                     </ul>
                 </div>
-                <div class="clients__column">
-                    <title class="clients_text_small">Our clients</title>
-                    <img class="logo-clients" src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task1\images\icons\clients\Client1.png">
-                    <img class="logo-clients" src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task1\images\icons\clients\Client2.png">
-                    <img class="logo-clients" src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task1\images\icons\clients\Client2.png">
-                    <img class="logo-clients" src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task1\images\icons\clients\Client1.png">
-                    <img class="logo-clients" src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task1\images\icons\clients\Client1.png">
-                    <img class="logo-clients" src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task1\images\icons\clients\Client2.png">
-                </div>
-            </div>
-        </div>
-    </clients>
-    <section>
-        <div class="container">
-            <div class="intro__texts">
-                <title class="intro__text_small">WHAT WE DO</title>
-                <text class="intro__text_normal_white">Apparently we had reached a great height in the atmosphere, for the sky was a dead black, and the stars had ceased to twinkle.</text>
-            </div>
-            <div class="section__cards">
-                <div class="section__card">
-                    <title class="item-section__title_large"></title>
-                    <h5 class="item-section__headers"></h5>
-                    <text class="item-section__text"></text>
-                </div>
-                <div class="section__card">
-                    <title class="item-section__title_large"></title>
-                    <h5 class="item-section__headers"></h5>
-                    <text class="item-section__text"></text>
-                </div>
-                <div class="section__card">
-                    <title class="item-section__title_large"></title>
-                    <h5 class="item-section__headers"></h5>
-                    <text class="item-section__text"></text>
+                <div class="clients__logocolumn">
+                    <h3 class="clients__text_small">our clients</h3>
+                    <div class="logo-clients"><img  src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task1\images\icons\clients\Client1.png"></div>
+                    <div class="logo-clients"><img  src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task1\images\icons\clients\Client2.png"></div>
+                    <div class="logo-clients"><img  src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task1\images\icons\clients\Client2.png"></div>
+                    <div class="logo-clients"><img  src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task1\images\icons\clients\Client1.png"></div>
+                    <div class="logo-clients"><img  src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task1\images\icons\clients\Client1.png"></div>
+                    <div class="logo-clients"><img  src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task1\images\icons\clients\Client2.png"></div>
                 </div>
             </div>
         </div>
     </section>
-    <testimorials>
-        <div class="container">
-            <div class="testimorials__photos">
-                <img class="photo-testimorials" src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task1\images\icons\testimorials\Photo1.png">
-                <img class="photo-testimorials" src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task1\images\icons\testimorials\Photo2.png">
-                <img class="photo-testimorials" src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task1\images\icons\testimorials\Photo3.png">
-                <img class="photo-testimorials" src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task1\images\icons\testimorials\Photo4.png">
-                <img class="photo-testimorials" src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task1\images\icons\testimorials\Photo5.png">
-                <img class="photo-testimorials" src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task1\images\icons\testimorials\Photo6.png">
-                <img class="photo-testimorials" src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task1\images\icons\testimorials\Photo7.png">
-                <img class="photo-testimorials" src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task1\images\icons\testimorials\Photo8.png">
+    <section class="section">
+        <div class="section__container">
+            <div class="intro__texts">
+                <h3 class="intro__text_small intro__text_small_pink">WHAT WE DO</h3>
+                <h2 class="intro__text_normal intro__text_normal_white">Apparently we had reached a great height in the atmosphere, for the sky was a dead black, and the stars had ceased to twinkle.</h2>
             </div>
-            <div class="testimorials__texts">
-                <h1 class="testimorials__header">,,</h1>
-                <quote class="item-intro__comment_large">Lectus arcu bibendum at varius. Adipiscing diam donec adipiscing tristique.</quote>
-                <text class="item-intro__author"><span class="item-intro__author_pink">Andrew Slomka</span> - Some Company</text>
-            </div>
-        </div>
-    </testimorials>
-    <newsletter>
-        <div class=" container">
-            <div class="newsletter__texts">
-                <h3 class="text-newsletter">Subscribe to our newsletter</h3>
-                <h6>Cras pulvinar mattis nunc sed blandit.</h6>
-                <div class="newsletter__form">
-                    <form class="form-newsletter" action="#">EMAIL</form>
-                    <button class="button-newsletter">SUBSCRIBE<img class="icon-newletter"></button>
+            <div class="section__cards">
+                <div class="section__card">
+                    <div class="section__texts">
+                        <h2 class="item-section__title_large item-section__title_large_pink">01</h2>
+                        <h5 class="item-section__headers item-section__headers_white">Research</h5>
+                        <p class="item-section__text item-section__text_white">Eget nulla facilisi etiam dignissim diam quis enim lobortis scelerisque. Eu feugiat pretium nibh ipsum consequat nisl vel pretium. </p>
+                    </div>
+                </div>
+                <div class="section__card">
+                    <div class="section__texts">
+                        <h2 class="item-section__title_large item-section__title_large_pink">02</h2>
+                        <h5 class="item-section__headers item-section__headers_white">Marketing</h5>
+                        <p class="item-section__text item-section__text_white">Eget nulla facilisi etiam dignissim diam quis enim lobortis scelerisque. Eu feugiat pretium nibh ipsum consequat nisl vel pretium. </p>
+                    </div>
+                </div>
+                <div class="section__card">
+                    <div class="section__texts">
+                        <h2 class="item-section__title_large item-section__title_large_pink">03</h2>
+                        <h5 class="item-section__headers item-section__headers_white">Results</h5>
+                        <p class="item-section__text item-section__text_white">Eget nulla facilisi etiam dignissim diam quis enim lobortis scelerisque. Eu feugiat pretium nibh ipsum consequat nisl vel pretium. </p>
+                    </div>
                 </div>
             </div>
         </div>
-    </newsletter>
-    <footer>
-        <div class="container">
-
+    </section>
+    <section class="testimorials">
+        <div class="testimorials__container">
+            <div class="testimorials__photos">
+                <img class="photo-testimorials8" src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task1\images\icons\testimorials\“.png">
+                <img class="photo-testimorials1" src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task1\images\icons\testimorials\Photo1.png">
+                <img class="photo-testimorials2" src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task1\images\icons\testimorials\Photo2.png">
+                <img class="photo-testimorials3" src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task1\images\icons\testimorials\Photo3.png">
+                <img class="photo-testimorials4" src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task1\images\icons\testimorials\Photo4.png">
+                <img class="photo-testimorials5" src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task1\images\icons\testimorials\Photo5.png">
+                <img class="photo-testimorials6" src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task1\images\icons\testimorials\Photo6.png">
+                <img class="photo-testimorials7" src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task1\images\icons\testimorials\Photo7.png">
+                <img class="photo-testimorials_head" src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task1\images\icons\testimorials\PhotoHead.png">
+            </div>
+            <div class="testimorials__comments">
+                <button class="testimorials__button"><img src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task1\images\icons\testimorials\ArrowLeft.png"></button>
+                <div class="testimorials__texts">
+                    <h2 class="item-intro__comment_large">Lectus arcu bibendum at varius. Adipiscing diam donec adipiscing tristique.</h2>
+                </div>
+                <button class="testimorials__button"><img src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task1\images\icons\testimorials\ArrowRight.png"></button>
+            </div>
+            <p class="item-testimorials__author"><span class="item-intro__author item-intro__author_pink">Kerry Johnes</span> - Some Company</p>
         </div>
-    </footer>
+    </section>
+    <section class="newsletter">
+        <div class="newsletter__container">
+            <div class="newsletter__texts">
+                <h3 class="text-newsletter">Subscribe to our newsletter</h3>
+                <h6 class="subtext-newsletter">Cras pulvinar mattis nunc sed blandit.</h6>
+                <div class="newsletter__form">
+                    <input class="input-newsletter" action="#" placeholder="ENTER EMAIL"></input>
+                    <button class="button-newsletter"><p class="text-newsletter text-newsletter_pink">subscribe</p><div class="item-newsletter__background"><img class="icon-newletter" src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task1\images\icons\newsletter\ArrowRight.png"></div></button>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<footer>
+    <div class="footer__container">
+        <div class="footer__logo">
+            <h3 class="navbar__logo navbar__logo_white">Lopper</h3>
+            <p class="subtext-footer__logo subtext-footer__logo_white">Eu augue ut lectus arcu bibendum at.</p>
+        </div>
+        <div class="footer__info">
+            <div class="footer__navigaton">
+                <div class="footer__menu">
+                    <h3 class="footer__headtext footer__headtext_white">menu</h3>
+                    <ul class="footer__list">
+                        <li class="link-footer__list"><a class="text-footer__list_white">Home</a></li>
+                        <li class="link-footer__list"><a class="text-footer__list_white">About</a></li>
+                        <li class="link-footer__list"><a class="text-footer__list_white">Services</a></li>
+                        <li class="link-footer__list"><a class="text-footer__list_white">News</a></li>
+                        <li class="link-footer__list"><a class="text-footer__list_white">Gallery</a></li>
+                        <li class="link-footer__list"><a class="text-footer__list_white">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer__services">
+                    <h3 class="footer__headtext footer__headtext_white">services</h3>
+                    <ul class="footer__list">
+                        <li class="link-footer__list"><a class="text-footer__list_white">Lorem</a></li>
+                        <li class="link-footer__list"><a class="text-footer__list_white">Ipsum</a></li>
+                        <li class="link-footer__list"><a class="text-footer__list_white">Dolor</a></li>
+                        <li class="link-footer__list"><a class="text-footer__list_white">Sit Amet</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__websocial">
+                <div class="footer__contacts">
+                    <h3 class="footer__headtext footer__headtext_white">contact us</h3>
+                    <div class="footer__contact"><img class="icon-footer__contact" src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task1\images\icons\footer\mail.png"><p class="text-footer__contact_white">contact@lop.com</p></div>
+                    <div class="footer__contact"><img class="icon-footer__contact" src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task1\images\icons\footer\phone.png"><p class="text-footer__contact_white">856 - 693 - 456</p></div>
+                </div>
+                <div class="footer__follow">
+                    <h3 class="footer__headtext footer__headtext_white">follow us</h3>
+                    <div class="footer__icons">
+                        <img src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task1\images\icons\footer\icon1.png">
+                        <img src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task1\images\icons\footer\icon2.png">
+                        <img src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task1\images\icons\footer\icon3.png">
+                        <img src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task1\images\icons\footer\icon4.png">
+                        <img src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task1\images\icons\footer\icon5.png">
+                    </div>
+                </div>
+            </div>
+            <p class="footer__footnote footer__footnote_white">© 2019 Lopper by mariuszdaniel. All right reserved.</p> 
+        </div>
+   </div>
+</footer>
+</div>
 </body>
 </html>
