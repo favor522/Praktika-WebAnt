@@ -20,7 +20,6 @@ ul{
 /*navbar*/
 nav{
     box-shadow: -2px 0px 8px 2px rgba(0, 0, 0, 0.1);
-    min-height: 60px;
 }
 .navbar__container{
     display: flex;
@@ -42,6 +41,8 @@ nav{
     line-height: 100%;
     letter-spacing: 0%;
     text-align: center;
+    color: black;
+    text-decoration: none;
 }
 /*characters*/
     .characters__container{
@@ -100,7 +101,8 @@ nav{
         border-radius: 10px 10px 0 0;
     }
     .characters__texts{
-        height: 76px;
+        padding-left: 15px;
+        padding-top: 10px;
     }
     .name-character, .species-character{
         margin: 0;
@@ -278,7 +280,6 @@ nav{
         height: 128px;
         margin-top: 25px;
         background-color: rgba(250, 250, 250, 1);
-;
     }
     .image-episodes{
         border-radius: 10px 10px 0 0;
@@ -315,6 +316,323 @@ nav{
         color: rgba(0, 0, 0, 0.6);
         margin-top: 5px;
     }
+/*Character-details*/
+    .charactersdetails__head{
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 15px;
+    }
+    .button-charactersdetails__head{
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        top: 0;
+        background-color: transparent;
+        border: none;
+        width: 125px;
+    }
+    .header-charactersdetails__head{
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-size: 48px;
+        line-height: 100%;
+        letter-spacing: 0px;
+        text-align: center;
+        vertical-align: middle;
+    }
+    .charactersdetails__main{
+        width: 310px;
+        margin: 0 auto;
+    }
+    .logo-charactersdetails__head{
+        width: 100%;
+    }
+    .text-charactersdetails__head{
+        font-family: "Karla", sans-serif;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 100%;
+        letter-spacing: 0;
+        color: black;
+        text-transform: uppercase;
+    }
+    .charactersdetails__row{
+        display: flex;
+        justify-content: center;
+        gap: 2%;
+    }
+    .charactersdetails__column{
+        flex: 0 0 40%;
+    }
+    .head-charactersdetails__column{
+        font-family: "Roboto", sans-serif;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+        letter-spacing: 0.15px;
+        vertical-align: middle;
+        color: rgba(142, 142, 147, 1);
+    }
+    .charactersdetails__link{
+        padding-left: 25px;
+        padding-bottom: 15px;
+        border-width: 0 0 3px 0;
+        border-color: rgba(33, 33, 33, 0.08);
+        display: flex;
+        justify-content: space-between;
+    }
+    .type-characterdetails, .desc-characterdetails, .date-characterdetails{
+        margin: 0;
+    }
+    .type-characterdetails{
+        font-family: "Roboto", sans-serif;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0.15px;
+        color: rgba(8, 31, 50, 1);
+    }
+    .desc-characterdetails{
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 21px;
+        letter-spacing: 0.25px;
+        color: rgba(0, 0, 0, 0.6);
+    }
+    .date-characterdetails{
+        font-family: "Roboto", sans-serif;
+        font-weight: 500;
+        font-size: 10px;
+        line-height: 16px;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: rgba(142, 142, 147, 1);
+    }
+/*locations-details*/
+    .locationsdetails__head{
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 15px;
+    }
+    .button-locationsdetails__head{
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        top: 0;
+        background-color: transparent;
+        border: none;
+        width: 125px;
+    }
+    .header-locationsdetails__head{
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-size: 36px;
+        line-height: 100%;
+        letter-spacing: 0px;
+        text-align: center;
+        vertical-align: middle;
+
+    }
+    .locationsdetails__main{
+        width: 50%;
+        margin: 0 auto;
+    }
+    .logo-locationsdetails__head{
+        width: 100%;
+    }
+    .text-locationsdetails__head{
+        font-family: "Karla", sans-serif;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 100%;
+        letter-spacing: 0;
+        color: black;
+        text-transform: uppercase;
+    }
+    .locationsdetails__subheader{
+        display: flex;
+        justify-content: space-between;
+    }
+    .locationsdetails__subtext{
+        flex: 0 0 47.5%;
+    }
+    .type-locationsdetails, .desc-locationsdetails{
+        margin: 0;
+    }
+    .type-locationsdetails{
+        font-family: "Roboto", sans-serif;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0.15px;
+        color: rgba(8, 31, 50, 1);
+    }
+    .desc-locationsdetails{
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 21px;
+        letter-spacing: 0.25px;
+        color: rgba(0, 0, 0, 0.6);
+    }
+    .characters__cards{
+        margin-top: 50px;
+        margin-bottom: 50px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .locationsdetails__cards{
+        margin-top: 50px;
+        margin-bottom: 50px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .locationsdetails__card{
+        border-radius: 5px;
+        box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.46);
+        min-height: 244px;
+        margin-top: 25px;
+    }
+    .image-locationsdetails{
+        border-radius: 10px 10px 0 0;
+    }
+    .locationsdetails__texts{
+        padding-left: 15px;
+        padding-top: 10px;
+    }
+    .name-locationsdetails, .species-locationsdetails{
+        margin: 0;
+    }
+    .name-locationsdetails{
+        font-family: "Roboto", sans-serif;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 30px;
+        letter-spacing: 0.15px;
+        vertical-align: middle;
+        color: rgba(0, 0, 0, 0.87);
+    }
+    .species-locationsdetails{
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 21px;
+        letter-spacing: 0.25px;
+        color: rgba(0, 0, 0, 0.6);
+    }
+/*episodes-details*/
+    .episodesdetails__head{
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 15px;
+    }
+    .button-episodesdetails__head{
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        top: 0;
+        background-color: transparent;
+        border: none;
+        width: 125px;
+    }
+    .header-episodesdetails__head{
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-size: 36px;
+        line-height: 100%;
+        letter-spacing: 0px;
+        text-align: center;
+        vertical-align: middle;
+
+    }
+    .episodesdetails__main{
+        width: 50%;
+        margin: 0 auto;
+    }
+    .logo-episodesdetails__head{
+        width: 100%;
+    }
+    .text-episodesdetails__head{
+        font-family: "Karla", sans-serif;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 100%;
+        letter-spacing: 0;
+        color: black;
+        text-transform: uppercase;
+    }
+    .episodesdetails__subheader{
+        display: flex;
+        justify-content: space-between;
+    }
+    .episodesdetails__subtext{
+        flex: 0 0 47.5%;
+    }
+    .type-episodesdetails, .desc-episodesdetails{
+        margin: 0;
+    }
+    .type-episodesdetails{
+        font-family: "Roboto", sans-serif;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0.15px;
+        color: rgba(8, 31, 50, 1);
+    }
+    .desc-episodesdetails{
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 21px;
+        letter-spacing: 0.25px;
+        color: rgba(0, 0, 0, 0.6);
+    }
+    .episodesdetails__cards{
+        margin-top: 50px;
+        margin-bottom: 50px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .episodesdetails__card{
+        border-radius: 5px;
+        box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.46);
+        min-height: 244px;
+        margin-top: 25px;
+    }
+    .image-episodesdetails{
+        border-radius: 10px 10px 0 0;
+    }
+    .episodesdetails__texts{
+        padding-left: 15px;
+        padding-top: 10px;
+    }
+    .name-episodesdetails, .species-episodesdetails{
+        margin: 0;
+    }
+    .name-episodesdetails{
+        font-family: "Roboto", sans-serif;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 30px;
+        letter-spacing: 0.15px;
+        vertical-align: middle;
+        color: rgba(0, 0, 0, 0.87);
+    }
+    .species-episodesdetails{
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 21px;
+        letter-spacing: 0.25px;
+        color: rgba(0, 0, 0, 0.6);
+    }
 /*footer*/
     footer{
         box-shadow: -2px 0px 8px 2px rgba(0, 0, 0, 0.1);
@@ -341,7 +659,7 @@ nav{
 }
 @media (max-width: 767.98px){
     [class*="__container"]{
-    width: auto;
+        width: auto;
     }
 }
 /*
