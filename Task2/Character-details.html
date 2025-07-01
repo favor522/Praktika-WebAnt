@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task1WebAnt</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles\Style.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>characters-details</title>
 </head>
 <body>
     <!DOCTYPE html>
@@ -14,7 +19,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task2\styles\Style.css">
+    <link rel="stylesheet" type="text/css" href="styles\Style.css">
     <title>Locations</title>
 </head>
 <body>
@@ -22,7 +27,7 @@
     <header >
         <nav>
             <div class="navbar__container">
-                <img src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task2\images\icons\navbar\logo-black 1.svg" class="navbar__logo">
+                <img src="images\icons\navbar\logo-black 1.svg" class="navbar__logo">
                     <ul class="navbar__list">
                         <li class="item-navbar__list"><a class="navbar__link" href="Characters.html">Characters</a></li>
                         <li class="item-navbar__list"><a class="navbar__link" href="Locations.html">Locations</a></li>
@@ -34,9 +39,9 @@
     <main>
         <div class="charactersdetails__container">
             <div class="charactersdetails__head">
-                <button class="button-charactersdetails__head"><img class="text-charactersdetails__head" src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task2\images\icons\characters-details\arrow_back.svg"><p class="text-charactersdetails__head">go back</p></button>
+                <button class="button-charactersdetails__head"><img class="text-charactersdetails__head" src="images\icons\characters-details\arrow_back.svg"><p class="text-charactersdetails__head">go back</p></button>
                 <div class="charactersdetails__main">
-                    <img class="logo-charactersdetails__head" src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task2\images\icons\characters-details\characters-details_logo.svg">
+                    <img class="logo-charactersdetails__head" src="images\icons\characters-details\characters-details_logo.svg">
                     <h3 class="header-charactersdetails__head">Rick Sanchez</h3>
                 </div>
             </div>
@@ -80,7 +85,7 @@
                                     <h3 class="type-characterdetails">Location</h3>
                                     <p class="desc-characterdetails">Earth (Replacemnt Dimension)</p>
                                 </div>
-                                <img class="icon-charactersdetails__link" src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task2\images\icons\characters-details\arrow.svg">
+                                <img class="icon-charactersdetails__link" src="images\icons\characters-details\arrow.svg">
                             </li>
                         </ul>
                     </div>
@@ -93,7 +98,7 @@
                                     <p class="desc-characterdetails">Pilot</p>
                                     <p class="date-characterdetails">december 2, 2013</p>
                                 </div>
-                                <img class="icon-charactersdetails__link" src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task2\images\icons\characters-details\arrow.svg">
+                                <img class="icon-charactersdetails__link" src="images\icons\characters-details\arrow.svg">
                             </li>
                             <li class="charactersdetails__link">
                                 <div class="charactersdetails__texts">
@@ -101,7 +106,7 @@
                                     <p class="desc-characterdetails">Lawnmower Dog</p>
                                     <p class="date-characterdetails">december 9, 2013</p>
                                 </div>
-                                <img class="icon-charactersdetails__link" src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task2\images\icons\characters-details\arrow.svg">
+                                <img class="icon-charactersdetails__link" src="images\icons\characters-details\arrow.svg">
                             </li>
                             <li class="charactersdetails__link">
                                 <div class="charactersdetails__texts">
@@ -109,7 +114,7 @@
                                     <p class="desc-characterdetails">Anatomy Park</p>
                                     <p class="date-characterdetails">december 16, 2013</p>
                                 </div>
-                                <img class="icon-charactersdetails__link" src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task2\images\icons\characters-details\arrow.svg">
+                                <img class="icon-charactersdetails__link" src="images\icons\characters-details\arrow.svg">
                             </li>
                             <li class="charactersdetails__link">
                                 <div class="charactersdetails__texts">
@@ -117,7 +122,7 @@
                                     <p class="desc-characterdetails">M. Night Shaym-Aliens!</p>
                                     <p class="date-characterdetails">january 13, 2014</p>
                                 </div>
-                                <img class="icon-charactersdetails__link" src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task2\images\icons\characters-details\arrow.svg">
+                                <img class="icon-charactersdetails__link" src="images\icons\characters-details\arrow.svg">
                             </li>
                         </ul>
                     </div>
@@ -130,5 +135,7 @@
             <h3 class="text-footer">Make with ❤️ for the MobProgramming team</h3>
         </div>
     </footer>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="javascript/App.js"></script>
 </body>
 </html>

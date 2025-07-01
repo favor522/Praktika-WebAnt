@@ -6,15 +6,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task2\styles\Style.css">
-    <title>Locations</title>
+    <link rel="stylesheet" type="text/css" href="styles\Style.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Episodes</title>
 </head>
 <body>
 <div class="wrapper">
     <header >
         <nav>
             <div class="navbar__container">
-                <img src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task2\images\icons\navbar\logo-black 1.svg" class="navbar__logo">
+                <img src="images\icons\navbar\logo-black 1.svg" class="navbar__logo">
                     <ul class="navbar__list">
                         <li class="item-navbar__list"><a class="navbar__link" href="Characters.html">Characters</a></li>
                         <li class="item-navbar__list"><a class="navbar__link" href="Locations.html">Locations</a></li>
@@ -27,10 +28,10 @@
     <section class="episodes">
         <div class="episodes__container">
             <div class="episodes__logo">
-                <img class="logo-episodes" src="C:\Users\favor\Desktop\Praktika-WebAnt\Praktika-WebAnt\Task2\images\icons\episodes\episodes_logo.svg">
+                <img class="logo-episodes" src="images\icons\episodes\episodes_logo.svg">
             </div>
             <div class="episodes__filters">
-                <input class="input-episodes">
+                <input placeholder="Filter by name or episode (ex. S01 or S01E02)" class="input-episodes">
             </div>
             <div class="episodes__cards">
                 <div class="episodes__card">
@@ -130,5 +131,7 @@
     </div>
 </footer>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="javascript/App.js"></script>
 </body>
 </html>
