@@ -594,7 +594,9 @@ nav{
         transition: 0.3s;
     }
     .image-locationsdetails{
-        border-radius: 10px 10px 0 0;
+        border-radius: 5px 5px 0 0;
+        width: 240px;
+        height: 168px;
     }
     .locationsdetails__texts{
         padding-left: 15px;
@@ -706,7 +708,9 @@ nav{
         margin-top: 25px;
     }
     .image-episodesdetails{
-        border-radius: 10px 10px 0 0;
+        border-radius: 5px 5px 0 0;
+        width: 240px;
+        height: 168px;    
     }
     .episodesdetails__texts{
         padding-left: 15px;

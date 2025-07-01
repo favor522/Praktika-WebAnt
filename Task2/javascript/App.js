@@ -17,11 +17,11 @@ document.addEventListener('DOMContentLoaded', function() {
     initCharacterDetailsPage();
   } else if (path === 'Locations.html') {
     initLocationsPage();
-  } else if (path === 'Location-details.html') {
+  } else if (path === 'Locations-details.html') {
     initLocationDetailsPage();
   } else if (path === 'Episodes.html') {
     initEpisodesPage();
-  } else if (path === 'Episode-details.html') {
+  } else if (path === 'Episodes-details.html') {
     initEpisodeDetailsPage();
   }
 });
@@ -46,9 +46,9 @@ function initCharactersPage() {
   };
 
   function initFilters() {
-    const speciesContainer = document.querySelector('.characters__filtercontainer:nth-child(1)');
-    const genderContainer = document.querySelector('.characters__filtercontainer:nth-child(2)');
-    const statusContainer = document.querySelector('.characters__filtercontainer:nth-child(3)');
+    const speciesContainer = document.querySelector('.characters__filtercontainer:nth-child(2)');
+    const genderContainer = document.querySelector('.characters__filtercontainer:nth-child(3)');
+    const statusContainer = document.querySelector('.characters__filtercontainer:nth-child(4)');
     
     if (speciesContainer) {
       const button = speciesContainer.querySelector('.characters__button');
@@ -280,7 +280,7 @@ function initCharacterDetailsPage() {
       if (!e.target.classList.contains('icon-charactersdetails__link')) {
         const locationId = link.getAttribute('data-location-id');
         if (locationId) {
-          window.location.href = `Location-details.html?id=${locationId}`;
+          window.location.href = `Locations-details.html?id=${locationId}`;
         }
       }
     });
@@ -311,7 +311,7 @@ function addEpisodeClickHandlers() {
     link.addEventListener('click', (e) => {
       if (!e.target.classList.contains('icon-charactersdetails__link')) {
         const episodeId = link.getAttribute('data-episode-id');
-        window.location.href = `Episode-details.html?id=${episodeId}`;
+        window.location.href = `Episodes-details.html?id=${episodeId}`;
       }
     });
   });
@@ -334,6 +334,7 @@ function initLocationsPage() {
   const searchInput = document.querySelector('.input-locations');
 
  const filters = {
+  name: '',
   type: '',
   dimension: '',
   page: 1,
@@ -341,8 +342,8 @@ function initLocationsPage() {
 };
 
 function initFilters() {
-  const typeContainer = document.querySelector('.locations__filtercontainer:nth-child(1)');
-  const dimensionContainer = document.querySelector('.locations__filtercontainer:nth-child(2)');
+  const typeContainer = document.querySelector('.locations__filtercontainer:nth-child(2)');
+  const dimensionContainer = document.querySelector('.locations__filtercontainer:nth-child(3)');
   
   if (typeContainer) {
     const button = typeContainer.querySelector('.locations__button');
@@ -426,21 +427,27 @@ document.addEventListener('click', () => {
 initFilters()
 
   async function loadLocations() {
-    try {
-      const response = await axios.get(`${My_Api}/location`, {
-        params: {
-          page: state.page,
-          name: state.searchQuery
-        }
-      });
-      
-      renderLocations(response.data.results);
-      state.hasMore = !!response.data.info.next;
-      updateLoadMoreButton();
-    } catch (error) {
-      console.error('Error loading locations:', error);
+  try {
+    const params = {
+      page: filters.page
+    };
+    if (filters.name) params.name = filters.name;
+    if (filters.type) params.type = filters.type;
+    if (filters.dimension) params.dimension = filters.dimension;
+
+    const response = await axios.get(`${My_Api}/location`, { params });
+    
+    renderLocations(response.data.results);
+    filters.hasMore = !!response.data.info.next;
+    updateLoadMoreButton();
+  } catch (error) {
+    console.error('Error loading locations:', error);
+    const container = document.querySelector('.locations__cards');
+    if (container) {
+      console.log("Error loadLocations");
     }
   }
+}
 
   function renderLocations(locations) {
     if (state.page === 1) container.innerHTML = '';
@@ -455,7 +462,7 @@ initFilters()
         </div>
       `;
       card.addEventListener('click', () => {
-        window.location.href = `Location-details.html?id=${location.id}`;
+        window.location.href = `Locations-details.html?id=${location.id}`;
       });
       container.appendChild(card);
     });
@@ -599,7 +606,7 @@ function initEpisodesPage() {
         </div>
       `;
       card.addEventListener('click', () => {
-        window.location.href = `Episode-details.html?id=${episode.id}`;
+        window.location.href = `Episodes-details.html?id=${episode.id}`;
       });
       container.appendChild(card);
     });
@@ -630,7 +637,6 @@ function initEpisodesPage() {
 }
 
 function initEpisodeDetailsPage() {
-  
   const urlParams = new URLSearchParams(window.location.search);
   const episodeId = urlParams.get('id');
   
@@ -641,25 +647,19 @@ function initEpisodeDetailsPage() {
 
   async function loadEpisodeDetails() {
     try {
-      const response = await axios.get(`${My_Api}/episode/${episodeId}`);
-      renderEpisodeDetails(response.data);
+      const episodeResponse = await axios.get(`${My_Api}/episode/${episodeId}`);
+      const episode = episodeResponse.data;
       
-      if (response.data.characters.length > 0) {
-        const characterIds = response.data.characters.map(url => 
-          url.split('/').pop()
-        );
-        const charactersResponse = await axios.get(
-          `${My_Api}/character/${characterIds.join(',')}`
-        );
-        renderCharacters(Array.isArray(charactersResponse.data) ? 
-          charactersResponse.data : [charactersResponse.data]);
-      }
+      const characterIds = episode.characters.map(url => url.split('/').pop());
+      const charactersResponse = await axios.get(`${My_Api}/character/${characterIds.join(',')}`);
+      const characters = Array.isArray(charactersResponse.data) ? charactersResponse.data : [charactersResponse.data];
+      renderEpisodeDetails(episode, characters);
     } catch (error) {
       console.error('Error loading episode details:', error);
     }
   }
 
-  function renderEpisodeDetails(episode) {
+  function renderEpisodeDetails(episode, characters) {
     document.querySelector('.header-episodesdetails__head').textContent = episode.name;
     
     document.querySelector('.episodesdetails__subheader').innerHTML = `
@@ -672,6 +672,7 @@ function initEpisodeDetailsPage() {
         <p class="desc-episodesdetails">${episode.air_date}</p>
       </div>
     `;
+    renderCharacters(characters);
   }
 
   function renderCharacters(characters) {
@@ -697,5 +698,8 @@ function initEpisodeDetailsPage() {
     });
   }
 
-  if (episodeId) loadEpisodeDetails();
+  if (episodeId) {
+    loadEpisodeDetails();
+  }
 }
+ 
