@@ -407,6 +407,11 @@ header{
     align-items: center;
     margin-top: 50px;
 }
+.section__card:hover{
+    background-color: #F61067;
+    transition: 0.3s;
+    color: #FCFCFC;
+}
 .section__texts{
     align-items: center;
     margin: 0 auto;
