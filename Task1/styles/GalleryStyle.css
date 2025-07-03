@@ -186,6 +186,7 @@ nav{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    margin-bottom: 450px;
 }
 .header-gallery__textblock{
     font-weight: 800;
@@ -202,15 +203,16 @@ nav{
     letter-spacing: 0;
 }
 .gallery__textblock1, .gallery__textblock2, .gallery__textblock3, .gallery__textblock4, .gallery__textblock5{
-    margin-bottom: 450px;
+    margin-bottom: 470px;
+    overflow: hidden;
 }
 .gallery__textblock1{
-    width: 45%;
+    flex: 0 0 45%;
 
     max-width: 100%;
 }
 .gallery__textblock2{
-    width: 45%;
+    flex: 0 0 45%;
 
     max-width: 100%;
 }
@@ -223,12 +225,13 @@ nav{
     background-image: 
     linear-gradient(90deg, #5e239dda 100%, #5E239D 0%),
     url(images/gallery/background-image1.png);
-    width: 750px;
+    width: 100vw;
     height: 100%;
-    max-width: 100%;
-    position: relative;
+    max-width: 750px;
+    position: absolute;
     display: inline-block;
-    transform: translate(-22.5%, -10%);
+    transform: translateY(-10%);
+    left: 0;
     z-index: -3;
 }
 .gallery__textblock2::before{
@@ -237,11 +240,13 @@ nav{
     linear-gradient(90deg, #00f0b4da 100%, #5E239D 0%),
     url(images/gallery/background-image4.png);
     width: 100%;
-    height: 100%;
+    height: 110%;
     max-width: 720px;
-    position: relative;
+    max-height: 110%;
+    position: absolute;
     display: inline-block;
-    transform: translate(-8%, -9%);
+    transform: translateY(-9%);
+    right: 0;
     z-index: -2;
 }
 .gallery__textblock3::before{
@@ -249,25 +254,28 @@ nav{
     background-image: 
     linear-gradient(90deg, #f61068da 100%, #5E239D 0%),
     url(images/gallery/background-image2.png);
-    width: 100%;
+    width: 100vw;
     height: 100%;
     max-width: 1440px;
-    position: relative;
+    position: absolute;
     display: inline-block;
-    transform: translate(-10.5%, -5%);
+    transform: translateY( -5%);
+    left: 0;
     z-index: -4;
+    background-position: center;  
 }
 .gallery__textblock4::before{
     content: "";
     background-image: 
     linear-gradient(90deg, #00f0b4da 100%, #5E239D 0%),
     url(images/gallery/background-image3.png);
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 110%;
     max-width: 720px;
-    position: relative;
+    position: absolute;
     display: inline-block;
-    transform: translate(-22.5%, -5%);
+    transform: translateY( -9%);
+    left: 0;
     z-index: -2;
 }
 .gallery__textblock5::before{
@@ -275,14 +283,14 @@ nav{
     background-image: 
     linear-gradient(90deg, #5e239dda 100%, #5E239D 0%),
     url(images/gallery/background-image5.png);
-    background-size: cover;
-    width: 100%;
+    width: 100vw;
     height: 100%;
     max-width: 750px;
-    position: relative;
-    display: inline-block;
-    transform: translate(0%, 0%);
+    position: absolute;
+    transform: translateY( 0%);
+    right: 0;
     z-index: -3;
+    background-position: center;  
 }
 /*testimorials*/
     .testimorials{
@@ -545,47 +553,15 @@ nav{
     .navbar__phone{
         flex: 0 0 30%;
     }
-    /*header*/
-    .header__subheader{
-        flex: 0 0 80%;
-    }
-    .header__subheader:before{ content: "";
-        width: 95%;
-        transform: translate(-12.5%, 0);
-    }
-    /*intro*/
-    .item-intro{
-        flex: 0 0 50%;
-    }
-    .item-intro__comment:before{ content: "";
-        height: 185px;
-        transform: translate(-50px, -17.5%);
-    }
-    /*features*/
-    .features__textcolumn{
-        flex: 1 0 100%;
-    }
-    .features__photocolumn{
-        display: none;
-    }
-    /*clients*/
-    .clients__container{
-        padding-top: 0;
-    }
-    .clients__row{
+    /*gallery*/
+    .gallery__container{
         display: block;
+        margin-bottom: 750px;
     }
-    .clients__textcolumn{
-        width: 80%;
-    }
-    .clients__textcolumn:before{
-        height: 415px;
-        width: 110%;
-    }
-    /*sections*/
-    .section__container{
-        padding-bottom: 200px;
-        padding-top: 100px;
+    .gallery__textblock1::before, .gallery__textblock2::before, .gallery__textblock3::before, .gallery__textblock4::before, .gallery__textblock5::before{
+        max-width: 100%;
+        background-size: cover;
+        height: 100%;
     }
     /*testimorials*/
     .photo-testimorials1,.photo-testimorials2, .photo-testimorials3,.photo-testimorials4, .photo-testimorials5,.photo-testimorials6, .photo-testimorials7{
@@ -607,16 +583,9 @@ nav{
     .navbar__list{
         flex: 0 0 60%;
     }
-    /*header*/
-    .header__subheader{
-        flex: 0 0 70%;
-    }
-    .header__subheader:before{ content: "";
-        width: 120%;
-        transform: translate(-40%, 0);
-    }
-    .button-subheader{
-        display: none;
+    /*gallery*/
+    .gallery__textblock5::before{
+        transform: translateY(-5%);
     }
     /*clients*/
     .clients__textcolumn{

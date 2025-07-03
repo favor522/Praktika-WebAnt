@@ -170,7 +170,7 @@ header{
 }
 /*team*/
 .team:before{ content:"";
-    transform: translateY(35%);
+    transform: translateY(45%);
     position: absolute;
     display: inline-block;
     width: 100%;
