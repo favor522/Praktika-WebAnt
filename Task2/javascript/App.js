@@ -435,7 +435,6 @@ initFilters()
 
       const response = await axios.get(`${My_Api}/location`, { params });
       
-      // Очищаем контейнер только для первой страницы
       if (state.page === 1) {
         container.innerHTML = '';
       }
@@ -465,17 +464,15 @@ initFilters()
     });
   }
 
-  // Обновление кнопки "Load More"
   function updateLoadMoreButton() {
     if (loadMoreBtn) {
       loadMoreBtn.style.display = state.hasMore ? 'block' : 'none';
     }
   }
 
-  // Инициализация
+
   initFilters();
 
-  // Обработчики событий
   if (loadMoreBtn) {
     loadMoreBtn.addEventListener('click', () => {
       state.page++;
@@ -595,7 +592,8 @@ function initEpisodesPage() {
 
   function renderEpisodes(episodes) {
     if (state.page === 1) container.innerHTML = '';
-    
+    const filters = {
+    }
     episodes.forEach(episode => {
       const card = document.createElement('div');
       card.className = 'episodes__card';
@@ -645,6 +643,7 @@ function initEpisodeDetailsPage() {
   if (backButton) {
     backButton.addEventListener('click', () => window.history.back());
   }
+  const container = document.querySelector('.episodesdetails__cards');
 
   async function loadEpisodeDetails() {
     try {
@@ -653,7 +652,8 @@ function initEpisodeDetailsPage() {
       
       const characterIds = episode.characters.map(url => url.split('/').pop());
       const charactersResponse = await axios.get(`${My_Api}/character/${characterIds.join(',')}`);
-      const characters = Array.isArray(charactersResponse.data) ? charactersResponse.data : [charactersResponse.data];
+      const characters = Array.isArray(charactersResponse.data) ? 
+        charactersResponse.data : [charactersResponse.data];
       renderEpisodeDetails(episode, characters);
     } catch (error) {
       console.error('Error loading episode details:', error);
@@ -677,23 +677,24 @@ function initEpisodeDetailsPage() {
   }
 
   function renderCharacters(characters) {
-  if (filters.page === 1) container.innerHTML = ''; 
-  
-  characters.forEach(character => {
-    const card = document.createElement('div');
-    card.className = 'characters__card';
-    card.innerHTML = `
-      <img src="${character.image}" alt="${character.name}" class="image-characters">
-      <div class="characters__texts">
-        <h3 class="name-character">${character.name}</h3>
-        <p class="species-character">${character.species}</p>
-      </div>
-    `;
-    card.addEventListener('click', () => {
-      window.location.href = `Character-details.html?id=${character.id}`;
+    if (!container) return;
+        container.innerHTML = '';
+    
+    characters.forEach(character => {
+      const card = document.createElement('div');
+      card.className = 'episodesdetails__card';
+      card.innerHTML = `
+        <img src="${character.image}" alt="${character.name}" class="image-episodesdetails">
+        <div class="episodesdetails__texts">
+          <h3 class="name-episodesdetails">${character.name}</h3>
+          <p class="species-episodesdetails">${character.species}</p>
+        </div>
+      `;
+      card.addEventListener('click', () => {
+        window.location.href = `Character-details.html?id=${character.id}`;
+      });
+      container.appendChild(card);
     });
-    container.appendChild(card); 
-  });
   }
 
   if (episodeId) {
