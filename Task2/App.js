@@ -34,15 +34,17 @@ function initCharactersPage() {
     hasMore: true
   };
 
-  const filters = {
-    species: '',
-    gender: '',
-    status: ''
-  };
-
   const container = document.querySelector('.characters__cards');
   const loadMoreBtn = document.querySelector('.button-characters');
-  const searchInput = document.querySelector('.input-characters'); 
+  const searchInput = document.querySelector('.input-characters');
+  const filters = {
+  page: 1,
+  searchQuery: '',
+  name: '',
+  type: '',
+  dimension: '',
+  hasMore: true
+};
 
   function initFilters() {
     const speciesContainer = document.querySelector('.characters__filtercontainer:nth-child(2)');
@@ -149,20 +151,15 @@ function initCharactersPage() {
     try {
       const response = await axios.get(`${My_Api}/character`, {
         params: {
-          page: state.page,
-          name: state.searchQuery,
+          page: filters.page,
           species: filters.species,
           gender: filters.gender,
           status: filters.status
         }
       });
       
-      if (state.page === 1) {
-        container.innerHTML = '';
-      }
-      
       renderCharacters(response.data.results);
-      state.hasMore = !!response.data.info.next;
+      filters.hasMore = !!response.data.info.next;
       updateLoadMoreButton();
     } catch (error) {
       console.error('Error loading characters:', error);
@@ -171,6 +168,8 @@ function initCharactersPage() {
 
 
   function renderCharacters(characters) {
+    if (state.page === 1) container.innerHTML = '';
+    
     characters.forEach(character => {
       const card = document.createElement('div');
       card.className = 'characters__card';
@@ -196,15 +195,15 @@ function initCharactersPage() {
 
   if (loadMoreBtn) {
     loadMoreBtn.addEventListener('click', () => {
-      state.page++;  
+      filters.page++;
       loadCharacters();
     });
-  }
+  } 
 
   if (searchInput) {
     searchInput.addEventListener('input', debounce((e) => {
-      state.page = 1; 
-      state.searchQuery = e.target.value;
+      state.page = 1;
+      state.searchQuery = e.target.value.trim();
       loadCharacters();
     }, 300));
   }
@@ -324,21 +323,26 @@ function addEpisodeClickHandlers() {
 }
 
 function initLocationsPage() {
+  
   const state = {
     page: 1,
     searchQuery: '',
     hasMore: true
   };
 
-  const filters = {
-    type: '',
-    dimension: ''
-  };
-
   const container = document.querySelector('.locations__cards');
   const loadMoreBtn = document.querySelector('.button-characters');
   const searchInput = document.querySelector('.input-locations');
-  
+
+ const filters = {
+  page: 1,
+  searchQuery: '',
+  name: '',
+  type: '',
+  dimension: '',
+  hasMore: true
+};
+
 function initFilters() {
   const typeContainer = document.querySelector('.locations__filtercontainer:nth-child(2)');
   const dimensionContainer = document.querySelector('.locations__filtercontainer:nth-child(3)');
@@ -425,30 +429,29 @@ document.addEventListener('click', () => {
 initFilters()
 
   async function loadLocations() {
-    try {
-      const params = {
-        page: state.page,
-        name: state.searchQuery || undefined,
-        type: filters.type || undefined,
-        dimension: filters.dimension || undefined
-      };
-
-      const response = await axios.get(`${My_Api}/location`, { params });
-      
-      // Очищаем контейнер только для первой страницы
-      if (state.page === 1) {
-        container.innerHTML = '';
-      }
-      
-      renderLocations(response.data.results);
-      state.hasMore = !!response.data.info.next;
-      updateLoadMoreButton();
-    } catch (error) {
-      console.error('Error loading locations:', error);
+  try {
+    const params = {
+      page: filters.page,
+    };
+    if (filters.searchQuery) {
+      params.name = filters.searchQuery;
     }
+    if (filters.type) params.type = filters.type;
+    if (filters.dimension) params.dimension = filters.dimension;
+
+    const response = await axios.get(`${My_Api}/location`, { params });
+    
+    renderLocations(response.data.results);
+    filters.hasMore = !!response.data.info.next;
+    updateLoadMoreButton();
+  } catch (error) {
+    console.error('Error loading locations:', error);
   }
+}
 
   function renderLocations(locations) {
+    if (state.page === 1) container.innerHTML = '';
+    
     locations.forEach(location => {
       const card = document.createElement('div');
       card.className = 'locations__card';
@@ -461,35 +464,31 @@ initFilters()
       card.addEventListener('click', () => {
         window.location.href = `Locations-details.html?id=${location.id}`;
       });
-      container.appendChild(card); 
+      container.appendChild(card);
     });
   }
 
-  // Обновление кнопки "Load More"
   function updateLoadMoreButton() {
     if (loadMoreBtn) {
       loadMoreBtn.style.display = state.hasMore ? 'block' : 'none';
     }
   }
 
-  // Инициализация
-  initFilters();
-
-  // Обработчики событий
   if (loadMoreBtn) {
-    loadMoreBtn.addEventListener('click', () => {
-      state.page++;
-      loadLocations();
+  loadMoreBtn.addEventListener('click', () => {
+    filters.page++;
+    loadLocations();
     });
   }
 
   if (searchInput) {
     searchInput.addEventListener('input', debounce((e) => {
-      state.page = 1; 
+      state.page = 1;
       state.searchQuery = e.target.value.trim();
       loadLocations();
     }, 300));
   }
+
   loadLocations();
 }
 
@@ -629,7 +628,7 @@ function initEpisodesPage() {
   if (searchInput) {
     searchInput.addEventListener('input', debounce((e) => {
       state.page = 1;
-      state.searchQuery = e.target.value;
+      state.searchQuery = e.target.value.trim();
       loadEpisodes();
     }, 300));
   }
@@ -677,23 +676,26 @@ function initEpisodeDetailsPage() {
   }
 
   function renderCharacters(characters) {
-  if (filters.page === 1) container.innerHTML = ''; 
-  
-  characters.forEach(character => {
-    const card = document.createElement('div');
-    card.className = 'characters__card';
-    card.innerHTML = `
-      <img src="${character.image}" alt="${character.name}" class="image-characters">
-      <div class="characters__texts">
-        <h3 class="name-character">${character.name}</h3>
-        <p class="species-character">${character.species}</p>
-      </div>
-    `;
-    card.addEventListener('click', () => {
-      window.location.href = `Character-details.html?id=${character.id}`;
+    const container = document.querySelector('.episodesdetails__cards');
+    if (!container) return;
+    
+    container.innerHTML = '';
+    
+    characters.forEach(character => {
+      const card = document.createElement('div');
+      card.className = 'episodesdetails__card';
+      card.innerHTML = `
+        <img src="${character.image}" alt="${character.name}" class="image-episodesdetails">
+        <div class="episodesdetails__texts">
+          <h3 class="name-episodesdetails">${character.name}</h3>
+          <p class="species-episodesdetails">${character.species}</p>
+        </div>
+      `;
+      card.addEventListener('click', () => {
+        window.location.href = `Character-details.html?id=${character.id}`;
+      });
+      container.appendChild(card);
     });
-    container.appendChild(card); 
-  });
   }
 
   if (episodeId) {
